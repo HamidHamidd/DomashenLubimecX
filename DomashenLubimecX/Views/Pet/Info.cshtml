@@ -1,0 +1,12 @@
+﻿@model DomashenLubimecX.Models.PetInfo
+
+<h2>Информация за Пухчо</h2>
+
+<img src="https://i.pinimg.com/236x/73/97/db/7397db2e227e49cefba6056e99cbea98.jpg" alt="Пухчо" style="max-width: 100%; height: auto; border: 2px solid black; border-radius: 8px; margin-bottom: 1rem;" />
+
+<p style="white-space: pre-line;">@Model.Description</p>
+
+<div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-puhcho" style="padding: 0.5rem 1rem; font-size: 1rem;">&larr;</a>
+    <a asp-controller="Home" asp-action="About" class="btn btn-puhcho" style="padding: 0.5rem 1rem; font-size: 1rem;">&rarr;</a>
+</div>

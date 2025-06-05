@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - DomashenLubimecX</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/DomashenLubimecX.styles.css" asp-append-version="true" />
+    <style>
+        /* Header и Footer */
+        header, footer {
+            background-color: #819A91;
+            color: black;
+            position: fixed;
+            width: 100%;
+            left: 0;
+            height: 60px;
+            z-index: 1030;
+        }
+
+        header {
+            top: 0;
+            border-bottom: 2px solid black;
+        }
+
+        footer {
+            bottom: 0;
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 2px solid black;
+        }
+
+        /* Центриране на навигацията */
+        .navbar-nav-center {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        /* Черен текст за навигацията */
+        .navbar-light .navbar-nav .nav-link {
+            color: black !important;
+        }
+
+        .navbar-light .navbar-brand {
+            color: black !important;
+        }
+
+        /* Login и Register отляво */
+        .navbar-nav-left {
+            margin-left: 1rem;
+            display: flex;
+        }
+
+        /* Main част */
+        main {
+            background-color: #EEEFE0;
+            color: black;
+            border: 2px solid black;
+            padding: 2rem;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            height: calc(100vh - 120px);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Footer текст */
+        footer a {
+            color: black !important;
+            text-decoration: none;
+            pointer-events: none;
+            cursor: default;
+        }
+
+        /* Стил за бутона */
+        .btn-puhcho {
+            background-color: #A7C1A8;
+            color: black !important;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+            .btn-puhcho:hover {
+                transform: scale(1.1);
+                color: black !important;
+            }
+
+        /* Стил за заглавие */
+        .puhcho-text {
+            font-size: 3rem;
+            color: black;
+            -webkit-text-stroke: 1px black;
+            text-stroke: 1px black;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light h-100">
+            <div class="container-fluid position-relative">
+                <div class="navbar-nav navbar-nav-left">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DomashenLubimecX</a>
+                    <partial name="_LoginPartial" />
+                </div>
+
+                <ul class="navbar-nav navbar-nav-center">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Начална</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Pet" asp-action="Info">Информация за животното</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">За нас</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            &copy; 2025 - DomashenLubimecX
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
